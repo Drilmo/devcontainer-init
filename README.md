@@ -4,22 +4,38 @@ CLI interactive pour initialiser des devcontainers VS Code avec support pour Nod
 
 ## Installation
 
+### Via npm (recommandé)
+
 ```bash
-# Cloner le repo
-git clone https://github.com/jeremybeutin/devcontainer-init.git
+# Installation globale
+npm install -g devcontainer-init
+
+# Ou utilisation directe avec npx
+npx devcontainer-init
+```
+
+### Via bun
+
+```bash
+# Installation globale
+bun install -g devcontainer-init
+
+# Ou utilisation directe avec bunx
+bunx devcontainer-init
+```
+
+### Depuis les sources
+
+```bash
+git clone https://github.com/Drilmo/devcontainer-init.git
 cd devcontainer-init
-
-# Installer les dépendances
 bun install
-
-# Lier globalement
 bun link
 ```
 
 ## Utilisation
 
 ```bash
-# Depuis n'importe quel répertoire
 cd /chemin/vers/mon-projet
 devcontainer-init
 ```
@@ -29,13 +45,11 @@ La CLI pose les questions suivantes :
 1. **Répertoire cible** - Par défaut le répertoire courant (`.`)
 2. **Runtime** - Node.js (pnpm), Node.js (bun), ou Python
 3. **Version** - Node 18/20/22 ou Python 3.10/3.11/3.12
-4. **Claude Code** - Oui/Non
-5. **Configuration Claude** - Local (monte ~/.claude) ou Frais (instance vierge)
-6. **Nom du container** - Affiché dans VS Code
-7. **Timezone** - Par défaut Europe/Paris
-8. **Ports** - Ports à exposer (3000 pour Node, 8000 pour Python)
-9. **Firewall** - Whitelist réseau (GitHub, npm/PyPI, Anthropic)
-10. **Extensions VS Code** - Sélection multiple
+4. **Claude Code** - Oui/Non, puis Local ou Frais
+5. **Timezone** - Par défaut Europe/Paris
+6. **Ports** - Ports à exposer (3000 pour Node, 8000 pour Python)
+7. **Firewall** - Whitelist réseau (GitHub, npm/PyPI, Anthropic)
+8. **Extensions VS Code** - Sélection multiple
 
 ## Fichiers générés
 
@@ -59,11 +73,14 @@ La CLI pose les questions suivantes :
 # Mode watch
 bun run dev
 
+# Tests
+bun test
+
 # Type check
 bun run typecheck
 
-# Build binaire standalone
-bun run build
+# Build pour npm
+bun run build:npm
 ```
 
 ## License
