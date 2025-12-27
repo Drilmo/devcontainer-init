@@ -11,7 +11,11 @@
     "start": "bun run src/index.ts",
     "dev": "bun --watch src/index.ts",
     "build": "bun build src/index.ts --compile --outfile dist/devcontainer-init",
-    "typecheck": "tsc --noEmit"
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "typecheck": "tsc --noEmit",
+    "check": "bun run typecheck && bun test",
+    "prepare": "lefthook install"
   },
   "keywords": [
     "devcontainer",
@@ -29,6 +33,7 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "lefthook": "^1.11.5",
     "typescript": "^5.9.3"
   }
 }
