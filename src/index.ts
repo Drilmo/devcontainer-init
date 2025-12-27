@@ -105,11 +105,6 @@ async function main() {
     });
   }
 
-  const containerName = await input({
-    message: "Nom du container (affiché dans VS Code)",
-    default: runtime === "python" ? "Python Dev" : "Node Dev",
-  });
-
   const timezone = await input({
     message: "Timezone",
     default: "Europe/Paris",
@@ -138,7 +133,6 @@ async function main() {
   });
 
   const config: DevcontainerConfig = {
-    containerName,
     runtime,
     runtimeVersion,
     timezone,

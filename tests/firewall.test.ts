@@ -3,7 +3,6 @@ import { generateFirewallScript, getFirewallDomains } from "../src/generators/fi
 import type { DevcontainerConfig } from "../src/types";
 
 const baseConfig: DevcontainerConfig = {
-  containerName: "Test Container",
   runtime: "node-pnpm",
   runtimeVersion: "20",
   timezone: "Europe/Paris",

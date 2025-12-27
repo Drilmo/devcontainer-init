@@ -3,7 +3,6 @@ import { generateDockerfile } from "../src/generators/dockerfile";
 import type { DevcontainerConfig } from "../src/types";
 
 const baseConfig: DevcontainerConfig = {
-  containerName: "Test Container",
   runtime: "node-pnpm",
   runtimeVersion: "20",
   timezone: "Europe/Paris",

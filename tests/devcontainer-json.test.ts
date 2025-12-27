@@ -3,7 +3,6 @@ import { generateDevcontainerJson } from "../src/generators/devcontainer-json";
 import type { DevcontainerConfig } from "../src/types";
 
 const baseConfig: DevcontainerConfig = {
-  containerName: "Test Container",
   runtime: "node-pnpm",
   runtimeVersion: "20",
   timezone: "Europe/Paris",
@@ -17,7 +16,7 @@ describe("generateDevcontainerJson", () => {
   test("should generate basic structure", () => {
     const result = generateDevcontainerJson(baseConfig);
 
-    expect(result.name).toBe("Test Container");
+    expect(result.name).toBe("${localWorkspaceFolderBasename}");
     expect(result.remoteUser).toBe("node");
     expect(result.workspaceFolder).toBe("/${localWorkspaceFolderBasename}");
     expect(result.forwardPorts).toEqual([3000]);

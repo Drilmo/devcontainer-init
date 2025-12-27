@@ -4,7 +4,7 @@ export function generateDevcontainerJson(config: DevcontainerConfig): Record<str
   const user = config.runtime === "python" ? "vscode" : "node";
 
   const json: Record<string, unknown> = {
-    name: config.containerName,
+    name: "${localWorkspaceFolderBasename}",
     build: {
       dockerfile: "Dockerfile",
       args: {
