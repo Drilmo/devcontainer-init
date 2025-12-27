@@ -30,7 +30,7 @@
     "claude",
     "bun"
   ],
-  "author": "Jeremy Beutin",
+  "author": "Drilmo",
   "license": "MIT",
   "engines": {
     "node": ">=20.12.0"
